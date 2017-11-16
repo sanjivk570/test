@@ -5,16 +5,16 @@ namespace App\Http\Controllers;
 use App\Role;
 use Illuminate\Http\Request;
 
-class RoleController extends Controller
-{
+class RoleController extends Controller {
+
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
-        //
+    public function index() {
+        $roles = Role::all();
+        return view('roles.index', compact('roles'));
     }
 
     /**
@@ -22,8 +22,7 @@ class RoleController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
+    public function create() {
         //
     }
 
@@ -33,8 +32,7 @@ class RoleController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
+    public function store(Request $request) {
         //
     }
 
@@ -44,9 +42,9 @@ class RoleController extends Controller
      * @param  \App\Role  $role
      * @return \Illuminate\Http\Response
      */
-    public function show(Role $role)
-    {
-        //
+    public function show(int $id) {
+        $role = Role::find($id);
+        return view('roles.show', compact('role'));
     }
 
     /**
@@ -55,8 +53,7 @@ class RoleController extends Controller
      * @param  \App\Role  $role
      * @return \Illuminate\Http\Response
      */
-    public function edit(Role $role)
-    {
+    public function edit(Role $role) {
         //
     }
 
@@ -67,8 +64,7 @@ class RoleController extends Controller
      * @param  \App\Role  $role
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Role $role)
-    {
+    public function update(Request $request, Role $role) {
         //
     }
 
@@ -78,8 +74,8 @@ class RoleController extends Controller
      * @param  \App\Role  $role
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Role $role)
-    {
+    public function destroy(Role $role) {
         //
     }
+
 }
